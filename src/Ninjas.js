@@ -1,10 +1,11 @@
 import React from 'react'
 
- const Ninjas = (props)=> {
-  console.log(props);
-  const ninjasList = props.ninjas.map((ninja)=>{
+ const Ninjas = ({ninjas})=> {
+  console.log({ninjas});
+  const ninjasList = ninjas.map((ninja)=>{
     return(
-      <div>
+      <div key = {ninja.id}>
+     
         <div>Name : {ninja.name}</div>
         <div>Age : {ninja.age}</div>
         <div>Belt : {ninja.belt}</div>
@@ -15,6 +16,7 @@ import React from 'react'
   })
     return (
       <div>
+      <div className="title"><h1>Ninjas</h1></div>
         {ninjasList}
       </div>
     )
